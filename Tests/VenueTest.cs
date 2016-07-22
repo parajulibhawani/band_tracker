@@ -4,7 +4,7 @@ using System;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace VenueTracker
+namespace BandTracker
 {
   public class VenueTest : IDisposable
   {
@@ -26,9 +26,20 @@ namespace VenueTracker
       Venue secondVenue = new Venue("Madison Square Garden");
       Assert.Equal(firstVenue, secondVenue);
     }
+    [Fact]
+    public void Test_SaveVenueToDatabase()
+    {
+      Venue testVenue = new Venue("Madison Square Garden");
+
+      testVenue.Save();
+      List<Venue> result = Venue.GetAll();
+      List<Venue> testList = new List<Venue>{testVenue};
+
+      Assert.Equal(testList, result);
+    }
     public void Dispose()
    {
-    //  Venue.DeleteAll();
+     Venue.DeleteAll();
    }
   }
 }
