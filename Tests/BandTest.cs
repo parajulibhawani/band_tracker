@@ -25,7 +25,7 @@ namespace BandTracker
     [Fact]
    public void Test_SaveBandToDatabase()
    {
-     Band testBand = new Band("Mark Twain");
+     Band testBand = new Band("The Band");
 
      testBand.Save();
      List<Band> result = Band.GetAll();
@@ -39,6 +39,14 @@ namespace BandTracker
      Band firstBand = new Band("The Band");
      Band secondBand = new Band("The Band");
      Assert.Equal(firstBand, secondBand);
+   }
+   [Fact]
+   public void Test_FindFindsBandInDatabase()
+   {
+     Band testBand = new Band("The Band");
+     testBand.Save();
+     Band foundBand = Band.Find(testBand.GetId());
+     Assert.Equal(testBand, foundBand);
    }
   }
 }
