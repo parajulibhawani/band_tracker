@@ -45,6 +45,14 @@ namespace BandTracker
       Venue foundVenue = Venue.Find(testVenue.GetId());
       Assert.Equal(testVenue, foundVenue);
     }
+    public void Test_Update_UpdatesVenueInDatabase()
+    {
+      Venue testVenue = new Venue("Madison Square Garden");
+      testVenue.Save();
+      string newName = "Oracle Arena";
+      testVenue.Update(newName);
+      Assert.Equal(newName, testVenue.GetVenueName());
+    }
     public void Dispose()
    {
      Venue.DeleteAll();
