@@ -4,7 +4,7 @@ using System;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace BandTracker
+namespace VenueTracker
 {
   public class VenueTest : IDisposable
   {
@@ -22,9 +22,9 @@ namespace BandTracker
     [Fact]
     public void Test_Equal_ReturnsTrueIfVenueNamesAreTheSame()
     {
-      Band firstBand = new Band("Madison Square Garden");
-      Band secondBand = new Band("Madison Square Garden");
-      Assert.Equal(firstBand, secondBand);
+      Venue firstVenue = new Venue("Madison Square Garden");
+      Venue secondVenue = new Venue("Madison Square Garden");
+      Assert.Equal(firstVenue, secondVenue);
     }
     public void Dispose()
    {
