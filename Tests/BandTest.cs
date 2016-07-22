@@ -22,5 +22,16 @@ namespace BandTracker
       int result = Band.GetAll().Count;
       Assert.Equal(0, result);
     }
+    [Fact]
+   public void Test_SaveBandToDatabase()
+   {
+     Band testBand = new Band("Mark Twain");
+
+     testBand.Save();
+     List<Band> result = Band.GetAll();
+     List<Band> testList = new List<Band>{testBand};
+
+     Assert.Equal(testList, result);
+   }
   }
 }
