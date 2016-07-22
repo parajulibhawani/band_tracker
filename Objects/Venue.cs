@@ -131,7 +131,7 @@ namespace BandTracker
       SqlDataReader rdr;
       conn.Open();
 
-      SqlCommand cmd = new SqlCommand("UPDATE venues SET venue_name = @NewName OUTPUT INSERTED.name WHERE id = @VenueId;", conn);
+      SqlCommand cmd = new SqlCommand("UPDATE venues SET venue_name = @NewName OUTPUT INSERTED.venue_name WHERE id = @VenueId;", conn);
 
       SqlParameter newNameParameter = new SqlParameter();
       newNameParameter.ParameterName = "@NewName";
