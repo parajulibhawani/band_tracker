@@ -19,6 +19,13 @@ namespace BandTracker
 
       Assert.Equal(0, result);
     }
+    [Fact]
+    public void Test_Equal_ReturnsTrueIfVenueNamesAreTheSame()
+    {
+      Band firstBand = new Band("Madison Square Garden");
+      Band secondBand = new Band("Madison Square Garden");
+      Assert.Equal(firstBand, secondBand);
+    }
     public void Dispose()
    {
     //  Venue.DeleteAll();
