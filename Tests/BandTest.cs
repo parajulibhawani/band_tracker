@@ -14,7 +14,7 @@ namespace BandTracker
     }
     public void Dispose()
     {
-      // Band.DeleteAll();
+      Band.DeleteAll();
     }
     [Fact]
     public void Test_DatabaseEmptyAtFirst()
@@ -32,6 +32,13 @@ namespace BandTracker
      List<Band> testList = new List<Band>{testBand};
 
      Assert.Equal(testList, result);
+   }
+   [Fact]
+   public void Test_Equal_ReturnsTrueIfNamesAreTheSame()
+   {
+     Band firstBand = new Band("The Band");
+     Band secondBand = new Band("The Band");
+     Assert.Equal(firstBand, secondBand);
    }
   }
 }
