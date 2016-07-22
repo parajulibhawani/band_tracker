@@ -1,0 +1,13 @@
+<h2>@Model["venue"].GetVenueName()</h2>
+<h3>Add bands to play.</h3>
+<form action="/band/@Model["bandAtVenue"].GetId()" method="post">
+  <input type="hidden" name="band_id" value="@Model["bandAtVenue"].GetId()">
+  <select name="add_new_band">
+    @foreach(var band in @Model["allBands"])
+    {
+      <option value="@author.GetId()">@author.GetName()</option>
+    }
+  </select>
+  <button type="submit">Add author</button>
+</form>
+<h4>Bands Playing at this venue.</h4>
