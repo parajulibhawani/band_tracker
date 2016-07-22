@@ -41,6 +41,7 @@ namespace BandTracker
     public void Test_FindFindsVenueInDatabase()
     {
       Venue testVenue = new Venue("Madison Square Garden");
+      testVenue.Save();
       Venue foundVenue = Venue.Find(testVenue.GetId());
       Assert.Equal(testVenue, foundVenue);
     }
