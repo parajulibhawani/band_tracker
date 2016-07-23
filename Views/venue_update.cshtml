@@ -1,0 +1,11 @@
+<h2>Update @Model.GetVenueName()</h2>
+
+<form action="/venue/@Model.GetId()" method="post">
+  <input type="hidden" name="_method" value="PATCH">
+  <label for="venue_name_update">Update Venue </label>
+  <input type="text" name="venue_name_update" required>
+  <button type="submit" name="button">Edit this Venue</button>
+</form>
+
+<a href="/venue/@Model.GetId()">Return to this venue's information page</a>
+<a href="venues/all">Return to all venues</a>

@@ -15,7 +15,7 @@ else
   }
 </ul>
 }
-<a href="/venue/add">Add bands to play at this venue.</a>
+
 <h3>Add bands</h3>
 <form action="/venue/@Model["venue"].GetId()" method="post">
   <input type="hidden" name="band_id">
@@ -27,3 +27,4 @@ else
   </select>
   <button type="submit">Add Band</button>
 </form>
+<a href="/venue/update/@Model["venue"].GetId()">Update Venue</a>
