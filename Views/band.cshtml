@@ -1,0 +1,33 @@
+<h2>@Model["band"].GetBandName()</h2>
+<h4>@Model["band"].GetBandName() will be playing at these venues.</h4>
+@if(@Model["venueOfBand"].Count ==0)
+{
+  <p>
+    On a break from the tour. Check back later.
+  </p>
+}
+else
+{
+<ul>
+  @foreach(var venue in @Model["venueOfBand"])
+  {
+    <li><a href="/venue/@venue.GetId()">@venue.GetVenueName()</a></li>
+  }
+</ul>
+}
+<h3>Add new venues</h3>
+<form action="/band/@Model["band"].GetId()" method="post">
+  <input type="hidden" name="venue_id">
+  <select name="add_new_venue">
+    @foreach(var venue in @Model["allVenues"])
+    {
+      <option value="@venue.GetId()">@venue.GetVenueName()</option>
+    }
+  </select>
+  <button type="submit">Add Venue</button>
+</form>
+<form action="/venues/clear" method="post">
+  <input type="hidden" name="_method" value="DELETE">
+  <button type="submit" >Delete Venues</button>
+</form>
+<a href="/">Home Page</a>
