@@ -84,6 +84,16 @@ namespace BandTracker
       model.Add("allBands", Band.GetAll());
       return View ["venue.cshtml", model];
     };
+    Delete["/venue/delete/{id}"]= parameter =>{
+      Venue venue = Venue.Find(parameter.id);
+      venue.Delete();
+      return View["venues.cshtml", Venue.GetAll()];
+    };
+    Delete["/band/delete/{id}"]= parameter =>{
+      Band band = Band.Find(parameter.id);
+      band.Delete();
+      return View["bands.cshtml", Band.GetAll()];
+    };
     Delete["/venues/clear"]= _ =>{
       Venue.DeleteAll();
       return View["index.cshtml", Venue.GetAll()];

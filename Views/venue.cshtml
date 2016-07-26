@@ -27,4 +27,11 @@ else
   </select>
   <button type="submit">Add Band</button>
 </form>
+
+<form action="/venue/delete/@Model["venue"].GetId()" method="post">
+<input type="hidden" name="_method" value="DELETE">
+<button type="submit">Delete @Model["venue"].GetVenueName()</button>
+</form>
+
 <a href="/venue/update/@Model["venue"].GetId()">Update Venue</a>
+<a href="/">Return To Home Page</a>

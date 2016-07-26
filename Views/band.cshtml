@@ -30,4 +30,9 @@ else
   <input type="hidden" name="_method" value="DELETE">
   <button type="submit" >Delete Venues</button>
 </form>
+<form action="/band/delete/@Model["band"].GetId()" method="post">
+<input type="hidden" name="_method" value="DELETE">
+<button type="submit">Delete @Model["band"].GetBandName()</button>
+</form>
+
 <a href="/">Home Page</a>

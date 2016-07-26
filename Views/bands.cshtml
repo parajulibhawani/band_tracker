@@ -17,7 +17,8 @@ else
   <ul>
     @foreach(var band in Model)
     {
-      <li><a href="/band/band.GetId()">@band.GetBandName()</a></li>
+      <li><a href="/band/@band.GetId()">@band.GetBandName()</a></li>
     }
   </ul>
 }
+<a href="/">Return To Home Page</a>
